@@ -6,9 +6,10 @@ class Map extends React.Component {
     render() {
         return (
             <LeafletMap
-                center={[50, 10]}
-                zoom={6}
-                maxZoom={10}
+                center={[40.655769,-73.938503]}
+                zoom={13}
+                maxZoom={19}
+                minZoom={11}
                 attributionControl={true}
                 zoomControl={true}
                 doubleClickZoom={true}
@@ -16,9 +17,10 @@ class Map extends React.Component {
                 dragging={true}
                 animate={true}
                 easeLinearity={0.35}
+                legends={true}
             >
                 <TileLayer
-                    url='https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}'
+                    url='http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
                 />
                 <Marker position={[50, 10]}>
                     <Popup>
