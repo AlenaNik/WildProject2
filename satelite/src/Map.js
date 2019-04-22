@@ -1,5 +1,6 @@
 import React from 'react'
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 
 class Map extends React.Component {
     render() {
@@ -17,7 +18,7 @@ class Map extends React.Component {
                 easeLinearity={0.35}
             >
                 <TileLayer
-                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                    url='https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}'
                 />
                 <Marker position={[50, 10]}>
                     <Popup>
@@ -29,4 +30,4 @@ class Map extends React.Component {
     }
 }
 
-export default Map
+export default Map;

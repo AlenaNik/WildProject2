@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Map as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
 import { Map, TileLayer } from 'react-leaflet';
 import './App.css';
+import L from 'leaflet';
 
 let position;
 let zoomMap;
@@ -26,8 +27,13 @@ class App extends Component {
                     attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+
             </Map>
+
         );
+
     }
+
 }
+
 export default App;
