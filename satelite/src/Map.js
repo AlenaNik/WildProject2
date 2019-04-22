@@ -2,6 +2,7 @@ import React from 'react'
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
+
 class Map extends React.Component {
     render() {
         return (
@@ -20,7 +21,8 @@ class Map extends React.Component {
                 legends={true}
             >
                 <TileLayer
-                    url='http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+                    //AQUI TIENE QUE IR BOTONES Y COSAS
+                    // Y MARKER (ABAJO) ES PARA MARKAR EL MOVIMIENTO DE SATELITE
                 />
                 <Marker position={[50, 10]}>
                     <Popup>
