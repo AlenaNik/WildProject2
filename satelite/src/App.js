@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Map as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+let position;
+let zoomMap;
 
+class App extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            lat: 40.427005,
+            lng: -3.699534,
+            zoom: 11,
+        };
+    }
+    render() {
+        const { lat, lng, zoom } = this.state;
+        position = [lat, lng];
+        zoomMap = zoom;
+        return (
+            <Map center={position} zoom={zoomMap} id="mapid" ref={e => { this.mapInstance = e }}>
+                <TileLayer
+                    attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+            </Map>
+        );
+    }
+}
 export default App;
