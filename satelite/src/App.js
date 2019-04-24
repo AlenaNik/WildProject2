@@ -25,7 +25,7 @@ class App extends Component {
             <Map center={position} zoom={zoomMap} id="mapid" ref={e => { this.mapInstance = e }}>
                 <TileLayer
                     attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                    url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     // opcion en color url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     // opcion negro url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
                     // opcion blanquita url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
