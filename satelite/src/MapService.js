@@ -11,6 +11,7 @@ import L from 'leaflet';
 
 export default {
     fetch: function(url) {
-
+        fetch(url)
+        
     }
 };

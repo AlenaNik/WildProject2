@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import './App.css';
 //import L from 'leaflet';
-import MapService from './MapService'
+//import MapService from './MapService'
 
 let position;
 let zoomMap;
@@ -17,13 +17,23 @@ class App extends Component {
             lng: -3.699534
         };
     }
+
     showPosition = () => {
     
-        MapService.fetch('http://jservice.io/api/category?id=309')
+        fetch('http://api.open-notify.org/iss-now.json')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson) {
+                console.log(myJson);
+            });
+        /*
             .then((lat, lng) => {
                 this.setState({lat,lng});
             })
-        //this.showPosition()
+            */
+
+            //this.showPosition()
     }
     
     render() {
@@ -31,6 +41,7 @@ class App extends Component {
         position = [lat, lng];
         return (
             <div>
+                <button onClick={this.showPosition}>Click me to Show Position</button>
                 <Map center={position} zoom="11" id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
