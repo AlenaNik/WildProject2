@@ -1,28 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import { Map as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
 import './App.css';
+//import L from 'leaflet';
+import MapService from './MapService'
+
+let position;
+let zoomMap;
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor() {
+        super();
+        this.state = {
+            lat: 40.427005,
+            lng: -3.699534
+        };
+    }
+    showPosition = () => {
+    
+        MapService.fetch('http://jservice.io/api/category?id=309')
+            .then((lat, lng) => {
+                this.setState({lat,lng});
+            })
+        //this.showPosition()
+    }
+    
+    render() {
+        const { lat, lng } = this.state;
+        position = [lat, lng];
+        return (
+            <div>
+                <Map center={position} zoom="11" id="mapid" ref={e => { this.mapInstance = e }}>
+                    <TileLayer
+                        attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                        // opcion en color url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                        // opcion negro url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                        // opcion blanquita url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                    />
+
+                </Map>
+            </div>
+        );
+
+    }
+
 }
 
 export default App;
