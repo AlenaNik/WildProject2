@@ -43,6 +43,7 @@ class App extends Component {
         position = [lat, lng];
         return (
             <div>
+                <p className="link dim black-70 b f1 f-headline-ns tc db mb3 mb4-ns">Satelite App</p>
                 <BrowserRouter>
                     <div>
                         <Navigation />
@@ -52,7 +53,9 @@ class App extends Component {
                         </Switch>
                     </div>
                 </BrowserRouter>
-                <button className="f6 link dim br3 ph3 pv2 mb2 dib white bg-hot-pink" onClick={this.showPosition}>Click me to Show Position</button>
+                <div className="pv4 ph2 tc-l">
+                <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink" onClick={this.showPosition}>Click me to Show Position</button>
+                </div>
                 <Map center={position} zoom="11" id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -63,10 +66,10 @@ class App extends Component {
                     />
                     <Marker position={position} >
                         <Tooltip direction='top' opacity={1} >
-                            <span> Marker </span>
+                            <span> Satelite is here </span>
                         </Tooltip>
                         <Popup>
-                            <span> Marker </span>
+                            <span> Satelite is here </span>
                         </Popup>
                     </Marker>
                 </Map>
