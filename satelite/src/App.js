@@ -55,7 +55,7 @@ class App extends Component {
                 </BrowserRouter>
                 <div className="pv4 ph2 tc-l">
                 <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink"
-                        onClick={this.showPosition}>Click me to Show Position</button>
+                        onClick={this.showPosition}>Click me to show position</button>
                 </div>
                 <Map center={position} zoom="11" id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
