@@ -43,7 +43,7 @@ class App extends Component {
         position = [lat, lng];
         return (
             <div>
-                <p className="link dim black-70 b f1 f-headline-ns tc db mb3 mb4-ns">Satelite App</p>
+                <p className="link dim black-70 b f1 f-headline-ns tc db mb3 mb4-ns">🌙Satellite App</p>
                 <BrowserRouter>
                     <div>
                         <Navigation />
@@ -74,9 +74,6 @@ class App extends Component {
                         </Popup>
                     </Marker>
                 </Map>
-                <div className="pv4 ph2 tc-l b--hot-pink bw3">
-                <img src="https://media.giphy.com/media/VDkGE9ptABTBGxoXr9/giphy.gif" alt="" className="br2 mw5 mw6-ns items-center pt4"/>
-                </div>
             </div>
         );
 
