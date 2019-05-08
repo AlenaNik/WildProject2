@@ -78,9 +78,9 @@ class App extends Component {
                     <small className="f6 db tc">2019 <b className="ttu">Wild Code School Second Project</b>, by Raquel, Alena and Eva.
                     </small>
                     <div className="tc mt3">
-                        <a href="" title="" className="f6 dib pr2 mid-gray dim">Eva on GitHub</a>
-                        <a href="" title="" className="f6 dib ph2 mid-gray dim">Alena on GitHub</a>
-                        <a href="" title="" className="f6 dib pl2 mid-gray dim">Raquel on GitHub</a>
+                        <a href="" title="https://github.com/evadav" className="f6 dib pr2 mid-gray dim">Eva on GitHub</a>
+                        <a href="https://github.com/AlenaNik" title="" className="f6 dib ph2 mid-gray dim">Alena on GitHub</a>
+                        <a href="https://github.com/rakelqr" title="" className="f6 dib pl2 mid-gray dim">Raquel on GitHub</a>
                     </div>
                 </footer>
             </div>
