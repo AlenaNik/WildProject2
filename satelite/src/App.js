@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import { Map, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, Tooltip, Circle, FeatureGroup} from 'react-leaflet';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
@@ -65,14 +65,12 @@ class App extends Component {
                         // opcion en color url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                         // opcion blanquita url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     />
-                    <Marker position={position} >
-                        <Tooltip direction='top' opacity={1} >
-                            <span> Satelite is here </span>
-                        </Tooltip>
+                    <FeatureGroup color="yellow">
                         <Popup>
-                            <span> Satelite is here </span>
+                            <span>Popup in FeatureGroup</span>
                         </Popup>
-                    </Marker>
+                        <Circle center={position} radius={200} />
+                    </FeatureGroup>
                 </Map>
                 <footer className="pv4 ph3 ph5-m ph6-l hot-pink">
                     <small className="f6 db tc">2019 <b className="ttu">Wild Code School Second Project</b>, by Raquel, Alena and Eva.
