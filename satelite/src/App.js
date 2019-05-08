@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import { Map, TileLayer, Marker, Popup, Tooltip, Circle, FeatureGroup} from 'react-leaflet';
+import { Map, TileLayer, Popup, Circle, FeatureGroup} from 'react-leaflet';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
