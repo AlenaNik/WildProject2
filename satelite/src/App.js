@@ -38,9 +38,7 @@ class App extends Component {
             });
 
     }
-    showAlert() {
-        alert("The International Space Station (ISS) is a multi-nation construction project that is the largest single structure humans ever put into space. Follow the yellow circle to see where it is now.");
-    }
+
 
     render() {
         const {  lat, lng } = this.state;
