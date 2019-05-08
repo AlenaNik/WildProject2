@@ -38,6 +38,9 @@ class App extends Component {
             });
 
     }
+    showAlert() {
+        alert("The International Space Station (ISS) is a multi-nation construction project that is the largest single structure humans ever put into space. Follow the yellow circle to see where it is now.");
+    }
 
     render() {
         const {  lat, lng } = this.state;
@@ -56,7 +59,7 @@ class App extends Component {
                 </BrowserRouter>
                 <div className="pv4 ph2 tc-l">
                 <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink"
-                        onClick={this.showPosition}>Click me to show position</button>
+                        onClick={this.showAlert}>Click me!</button>
                 </div>
                 <Map center={position} zoom="3" id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
@@ -69,7 +72,7 @@ class App extends Component {
                         <Popup>
                             <span>Popup in FeatureGroup</span>
                         </Popup>
-                        <Circle center={position} radius={200} />
+                        <Circle center={position} radius={500} />
                     </FeatureGroup>
                 </Map>
                 <footer className="pv4 ph3 ph5-m ph6-l hot-pink">
