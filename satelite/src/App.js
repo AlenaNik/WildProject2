@@ -59,7 +59,7 @@ class App extends Component {
                 </BrowserRouter>
                 <div className="pv4 ph2 tc-l">
                 <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink"
-                        onClick={this.showAlert}>Click me!</button>
+                        onClick={() => this.setState({position: position})}>  Current position:  {position}</button>
                 </div>
                 <Map center={position} zoom="3" id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
