@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import { Map, TileLayer, Popup, Circle, FeatureGroup} from 'react-leaflet';
+import { Map, TileLayer, Popup, Circle, FeatureGroup, ZoomControl} from 'react-leaflet';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
@@ -15,7 +15,6 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            //position: [40, -3],
             lat: 40.427005,
             lng: -3.699534
         };
@@ -35,6 +34,7 @@ class App extends Component {
                     lat: latitude,
                     lng: longitude
                 });
+
             });
 
     }
@@ -58,7 +58,7 @@ class App extends Component {
                 <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink"
                         onClick={() => this.setState({position: position})}> Speed: 28 800 km/h Current position:  {position}</button>
                 </div>
-                <Map center={position} zoom="3" id="mapid" ref={e => { this.mapInstance = e }}>
+                <Map center={position} zoom="3" zoomControl={false} id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                         url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
@@ -71,7 +71,9 @@ class App extends Component {
                         </Popup>
                         <Circle center={position} radius={500} />
                     </FeatureGroup>
+                    <ZoomControl position="topright" />
                 </Map>
+               )
                 <footer className="pv4 ph3 ph5-m ph6-l hot-pink">
                     <small className="f6 db tc">2019 <b className="ttu">Wild Code School Second Project</b>, by Raquel, Alena and Eva.
                     </small>
