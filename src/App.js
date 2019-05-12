@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import { Map, TileLayer, Popup, Circle, FeatureGroup, ZoomControl} from 'react-leaflet';
+import { Map, TileLayer, Popup, Marker, FeatureGroup, ZoomControl} from 'react-leaflet';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { divIcon } from 'leaflet';
 import Navigation from './Components/Navigation';
 import Contact from './Components/Contact';
 import About from './Components/AboutUs';
@@ -40,6 +42,10 @@ class App extends Component {
     }
 
     render() {
+        const iconMarkup = renderToStaticMarkup(<i className=" fa fa-map-marker-alt fa-3x" />);
+        const customMarkerIcon = divIcon({
+            html: iconMarkup,
+        });
         const {  lat, lng } = this.state;
         position = [lat, lng];
         return (
@@ -65,12 +71,11 @@ class App extends Component {
                         // opcion en color url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                         // opcion blanquita url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     />
-                    <FeatureGroup color="yellow">
+                    <Marker position={position} icon={customMarkerIcon}>
                         <Popup>
-                            <span>Popup in FeatureGroup</span>
+                            A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
-                        <Circle center={position} radius={500} />
-                    </FeatureGroup>
+                    </Marker>
                     <ZoomControl position="topright" />
                 </Map>
                )

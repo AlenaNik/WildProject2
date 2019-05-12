@@ -1,2 +1,8 @@
 
 #mapid { margin-left: auto; margin-right: auto; height: 700px; margin: 100px;}
+
+.leaflet-div-icon {
+    background: transparent;
+    color: deeppink;
+    border: none;
+}
