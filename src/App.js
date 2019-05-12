@@ -42,7 +42,7 @@ class App extends Component {
     }
 
     render() {
-        const iconMarkup = renderToStaticMarkup(<i className=" fa fa-map-marker-alt fa-3x" />);
+        const iconMarkup = renderToStaticMarkup(<i className=" fas fa-space-shuttle fa-3x" />);
         const customMarkerIcon = divIcon({
             html: iconMarkup,
         });
