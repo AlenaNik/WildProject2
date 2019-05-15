@@ -1,8 +1,11 @@
 
-#mapid { margin-left: auto; margin-right: auto; height: 700px; margin: 100px;}
-
+#mapid { margin-left: 600px; margin-right: auto; height: 600px;
+    margin: 100px;  border-radius: 10px; border: 2px dotted #ffd600;}
+#root {
+    background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+}
 .leaflet-div-icon {
     background: transparent;
-    color: deeppink;
+    color: #ffd600;
     border: none;
 }

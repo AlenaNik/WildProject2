@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
-import { Map, TileLayer, Popup, Marker, FeatureGroup, ZoomControl} from 'react-leaflet';
+import { Map, TileLayer, Popup, Marker, ZoomControl} from 'react-leaflet';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -42,7 +42,7 @@ class App extends Component {
     }
 
     render() {
-        const iconMarkup = renderToStaticMarkup(<i className=" fas fa-space-shuttle fa-3x" />);
+        const iconMarkup = renderToStaticMarkup(<i className=" fas fa-user-astronaut fa-3x" />);
         const customMarkerIcon = divIcon({
             html: iconMarkup,
         });
@@ -50,7 +50,6 @@ class App extends Component {
         position = [lat, lng];
         return (
             <div>
-                <p className="link dim black-70 b f1 f-headline-ns tc db mb3 mb4-ns">🌙Satellite App</p>
                 <BrowserRouter>
                     <div>
                         <Navigation />
@@ -60,10 +59,11 @@ class App extends Component {
                         </Switch>
                     </div>
                 </BrowserRouter>
-                <div className="pv4 ph2 tc-l">
-                <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center white bg-hot-pink"
+                <div className="ph2 tc-l">
+                <button className="f6 link dim br3 ph3 pv2 mb2 dib items-center black bg-light-yellow code"
                         onClick={() => this.setState({position: position})}> Speed: 28 800 km/h Current position:  {position}</button>
                 </div>
+                <div className="tc">
                 <Map center={position} zoom="3" zoomControl={false} id="mapid" ref={e => { this.mapInstance = e }}>
                     <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -73,13 +73,14 @@ class App extends Component {
                     />
                     <Marker position={position} icon={customMarkerIcon}>
                         <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            I am Anne McClain. I've been 160 days in space. I'm inside of ISS now. You can see it's coordinates at the pink botton. <br /> See how many people are with me now: <a href="https://www.howmanypeopleareinspacerightnow.com/">6</a>
                         </Popup>
                     </Marker>
                     <ZoomControl position="topright" />
                 </Map>
+                </div>
                )
-                <footer className="pv4 ph3 ph5-m ph6-l hot-pink">
+                <footer className="pv4 ph3 ph5-m ph6-l hot-pink code">
                     <small className="f6 db tc">2019 <b className="ttu">Wild Code School Second Project</b>, by Raquel, Alena and Eva.
                     </small>
                     <div className="tc mt3">

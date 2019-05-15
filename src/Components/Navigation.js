@@ -3,11 +3,14 @@ import { NavLink } from "react-router-dom"
 
 const Navigation = () => {
     return (
-        <div className="ph3 ph5-ns pv4 nowrap overflow-x-auto">
-            <NavLink to="/" className="link dim gray f5 f4-ns dib mr3">🌕Home page</NavLink>
-            <NavLink to="/AboutUs" className="link dim gray f5 f4-ns dib mr3">🌗About</NavLink>
-            <NavLink to="/Contact" className="link dim gray f5 f4-ns dib mr3">🌘Contact</NavLink>
+        <nav className="pa3 pa4-ns code">
+        <div className="tc pb3">
+            <a className="code link dim b f1 f-headline-ns tc db mb3 mb4-ns yellow" href="https://www.n2yo.com/space-station/" title="Home">Satellite Tracker</a>
+            <NavLink to="/" className="link dim light-yellow f5 f4-ns dib mr3">Map</NavLink>
+            <NavLink to="/AboutUs" className="link dim light-yellow f5 f4-ns dib mr3">About</NavLink>
+            <NavLink to="/Contact" className="link dim light-yellow f5 f4-ns dib mr3">Contact</NavLink>
         </div>
+        </nav>
     );
 };
 
