@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 //import { Map1 as LeafletMap, GeoJSON, Marker, Popup } from 'react-leaflet';
 import { Map, TileLayer, Popup, Marker, ZoomControl} from 'react-leaflet';
+import ParticleEffectButton from 'react-particle-effect-button'
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
+
 import { divIcon } from 'leaflet';
 import Navigation from './Components/Navigation';
 import Contact from './Components/Contact';
@@ -42,7 +44,7 @@ class App extends Component {
     }
 
     render() {
-        const iconMarkup = renderToStaticMarkup(<i className=" fas fa-user-astronaut fa-3x" />);
+        const iconMarkup = renderToStaticMarkup(<i className=" fas fa-rocket fa-3x" />);
         const customMarkerIcon = divIcon({
             html: iconMarkup,
         });
