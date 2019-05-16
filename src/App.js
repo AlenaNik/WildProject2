@@ -27,7 +27,7 @@ class App extends Component {
 
     showPosition = () => {
 
-        fetch('http://api.open-notify.org/iss-now.json')
+        fetch('//api.open-notify.org/iss-now.json')
             .then(function(response) {
                 return response.json();
             })
